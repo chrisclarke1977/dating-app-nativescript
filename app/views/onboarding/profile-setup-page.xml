@@ -1,0 +1,27 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Complete Your Profile" />
+    
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Label text="Step 2: Profile Setup" class="text-xl font-bold mb-4" />
+            
+            <Image src="{{ photoURL }}" width="120" height="120" class="rounded-full mx-auto mb-4" tap="onChangePhoto" />
+            <Button text="Add Profile Photo" tap="onChangePhoto" class="-outline mb-4" />
+            
+            <Label text="Bio" class="font-medium mb-1" />
+            <TextView text="{{ bio }}" hint="Tell us about yourself..." class="input p-4 h-32 mb-4" />
+            
+            <Label text="Interests" class="font-medium mb-1" />
+            <WrapLayout class="mb-4">
+                <Repeater items="{{ interests }}">
+                    <Repeater.itemTemplate>
+                        <Label text="{{ $value }}" class="m-1 p-2 bg-indigo-100 text-indigo-800 rounded-full" />
+                    </Repeater.itemTemplate>
+                </Repeater>
+            </WrapLayout>
+            <Button text="Add Interests" tap="onAddInterest" class="-outline mb-4" />
+            
+            <Button text="Complete Setup" tap="onComplete" class="-primary p-4 mt-4" />
+        </StackLayout>
+    </ScrollView>
+</Page>

@@ -1,0 +1,60 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="Create Account" />
+    
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Label text="Step 1: Basic Info" class="text-xl font-bold mb-4" />
+            
+            <Label text="{{ generalError }}" 
+                   class="text-red-500 text-sm p-2 bg-red-100 rounded-lg mb-4" 
+                   visibility="{{ generalError ? 'visible' : 'collapsed' }}" 
+                   textWrap="true" />
+            
+            <Label text="Email" class="font-medium mb-1" />
+            <TextField text="{{ email }}" 
+                      hint="Enter your email" 
+                      keyboardType="email" 
+                      autocorrect="false"
+                      autocapitalizationType="none"
+                      class="input p-4" />
+            <Label text="{{ emailError }}" 
+                   class="text-red-500 text-sm mb-4" 
+                   visibility="{{ emailError ? 'visible' : 'collapsed' }}" 
+                   textWrap="true" />
+            
+            <Label text="Password" class="font-medium mb-1" />
+            <TextField text="{{ password }}" 
+                      hint="Enter your password" 
+                      secure="true" 
+                      class="input p-4" />
+            <Label text="{{ passwordError }}" 
+                   class="text-red-500 text-sm mb-4" 
+                   visibility="{{ passwordError ? 'visible' : 'collapsed' }}" 
+                   textWrap="true" />
+            
+            <Label text="Display Name" class="font-medium mb-1" />
+            <TextField text="{{ displayName }}" 
+                      hint="How should we call you?" 
+                      class="input p-4" />
+            <Label text="{{ displayNameError }}" 
+                   class="text-red-500 text-sm mb-4" 
+                   visibility="{{ displayNameError ? 'visible' : 'collapsed' }}" 
+                   textWrap="true" />
+            
+            <Label text="Age" class="font-medium mb-1" />
+            <TextField text="{{ age }}" 
+                      hint="Your age" 
+                      keyboardType="number" 
+                      class="input p-4" />
+            <Label text="{{ ageError }}" 
+                   class="text-red-500 text-sm mb-4" 
+                   visibility="{{ ageError ? 'visible' : 'collapsed' }}" 
+                   textWrap="true" />
+            
+            <Button text="{{ isLoading ? 'Creating Account...' : 'Continue' }}" 
+                    tap="{{ onContinue }}" 
+                    isEnabled="{{ !isLoading }}"
+                    class="{{ isLoading ? '-outline' : '-primary' }} p-4 mt-4" />
+        </StackLayout>
+    </ScrollView>
+</Page>

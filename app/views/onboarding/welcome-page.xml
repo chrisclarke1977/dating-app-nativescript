@@ -1,0 +1,14 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" actionBarHidden="true">
+    <GridLayout rows="*, auto">
+        <StackLayout row="0" class="p-8 text-center">
+            <Label text="❤️" class="text-8xl mb-4" />
+            <Label text="Welcome to Dating App" class="text-3xl font-bold mb-4" />
+            <Label text="Let's help you find your perfect match" class="text-lg text-gray-600 mb-8" textWrap="true" />
+            
+            <Image src="~/assets/welcome.png" class="w-64 h-64 mb-8" stretch="aspectFit" />
+            
+            <Button text="Create Account" tap="{{ onCreateAccount }}" class="-primary p-4 mb-4" />
+            <Button text="Sign In" tap="{{ onSignIn }}" class="-outline p-4" />
+        </StackLayout>
+    </GridLayout>
+</Page>

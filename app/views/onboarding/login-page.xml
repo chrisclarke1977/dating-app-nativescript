@@ -1,0 +1,25 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="Sign In" />
+    
+    <StackLayout class="p-4">
+        <Label text="Welcome Back!" class="text-2xl font-bold mb-4" />
+        
+        <Label text="Email" class="font-medium mb-1" />
+        <TextField text="{{ email }}" 
+                  hint="Enter your email" 
+                  keyboardType="email" 
+                  autocorrect="false"
+                  autocapitalizationType="none"
+                  class="input p-4 mb-4" />
+        
+        <Label text="Password" class="font-medium mb-1" />
+        <TextField text="{{ password }}" 
+                  hint="Enter your password" 
+                  secure="true" 
+                  class="input p-4 mb-4" />
+        
+        <Button text="Sign In" 
+                tap="{{ onSignIn }}" 
+                class="-primary p-4 mt-4" />
+    </StackLayout>
+</Page>

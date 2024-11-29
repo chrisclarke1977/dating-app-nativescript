@@ -1,0 +1,10 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" actionBarHidden="true">
+    <GridLayout class="bg-indigo-600">
+        <StackLayout class="p-8 text-center">
+            <Label text="❤️" class="text-8xl mb-4" />
+            <Label text="Dating App" class="text-white text-4xl font-bold mb-2" />
+            <Label text="Find your perfect match" class="text-white text-xl" />
+            <ActivityIndicator busy="true" class="mt-8" color="white" />
+        </StackLayout>
+    </GridLayout>
+</Page>

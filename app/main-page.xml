@@ -1,0 +1,35 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="Dating App" icon="" />
+    
+    <GridLayout rows="*, auto">
+        <!-- Main Content Area -->
+        <StackLayout row="0" class="p-4">
+            <Label text="❤️" class="text-8xl mb-4" />
+            <Label text="Welcome to Dating App" class="text-2xl font-bold text-center mb-4" />
+            <Label text="{{ message }}" class="text-lg text-center text-gray-500" textWrap="true" />
+        </StackLayout>
+
+        <!-- Bottom Navigation -->
+        <GridLayout row="1" columns="*, *, *, *" class="bg-white border-t border-gray-200 p-2">
+            <StackLayout col="0" tap="{{ navigateToMatches }}" class="text-center p-2">
+                <Label text="&#xf004;" class="fas text-2xl" />
+                <Label text="Matches" class="text-xs" />
+            </StackLayout>
+            
+            <StackLayout col="1" tap="{{ navigateToChat }}" class="text-center p-2">
+                <Label text="&#xf086;" class="fas text-2xl" />
+                <Label text="Chat" class="text-xs" />
+            </StackLayout>
+            
+            <StackLayout col="2" tap="{{ navigateToProfile }}" class="text-center p-2">
+                <Label text="&#xf007;" class="fas text-2xl" />
+                <Label text="Profile" class="text-xs" />
+            </StackLayout>
+            
+            <StackLayout col="3" tap="{{ navigateToSettings }}" class="text-center p-2">
+                <Label text="&#xf013;" class="fas text-2xl" />
+                <Label text="Settings" class="text-xs" />
+            </StackLayout>
+        </GridLayout>
+    </GridLayout>
+</Page>

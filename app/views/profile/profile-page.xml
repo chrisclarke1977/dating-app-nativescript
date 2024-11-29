@@ -1,0 +1,35 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+      xmlns:nav="~/shared/bottom-navigation"
+      navigatingTo="onNavigatingTo">
+    <ActionBar title="Profile" />
+    
+    <GridLayout rows="*, auto">
+        <ScrollView row="0">
+            <StackLayout class="p-4">
+                <Image src="{{ photoURL }}" class="w-32 h-32 rounded-full mx-auto" tap="onChangePhoto" />
+                <Button text="Change Photo" tap="onChangePhoto" class="mt-2" />
+                
+                <Label text="Display Name" class="font-bold mt-4" />
+                <TextField text="{{ displayName }}" hint="Enter your name" class="input" />
+                
+                <Label text="Bio" class="font-bold mt-4" />
+                <TextView text="{{ bio }}" hint="Tell us about yourself" class="input h-32" />
+                
+                <Label text="Age" class="font-bold mt-4" />
+                <TextField text="{{ age }}" keyboardType="number" hint="Your age" class="input" />
+                
+                <Label text="Interests" class="font-bold mt-4" />
+                <ListView items="{{ interests }}" class="list-group">
+                    <ListView.itemTemplate>
+                        <Label text="{{ $value }}" class="list-group-item" />
+                    </ListView.itemTemplate>
+                </ListView>
+                <Button text="Add Interest" tap="onAddInterest" class="mt-2" />
+                
+                <Button text="Save Profile" tap="onSaveProfile" class="-primary mt-4" />
+            </StackLayout>
+        </ScrollView>
+        
+        <nav:BottomNavigation row="1" currentPage="profile" />
+    </GridLayout>
+</Page>

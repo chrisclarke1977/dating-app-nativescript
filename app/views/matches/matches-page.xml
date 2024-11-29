@@ -1,0 +1,30 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+      xmlns:nav="~/shared/bottom-navigation"
+      navigatingTo="onNavigatingTo">
+    <ActionBar title="Potential Matches" />
+    
+    <GridLayout rows="*, auto, auto">
+        <ListView items="{{ potentialMatches }}" row="0">
+            <ListView.itemTemplate>
+                <GridLayout columns="auto, *" class="p-4 border-b border-gray-200">
+                    <Image src="{{ photoURL }}" width="60" height="60" class="rounded-full" col="0" />
+                    <StackLayout col="1" class="ml-4">
+                        <Label text="{{ displayName }}" class="font-bold text-lg" />
+                        <Label text="{{ age }} years old" class="text-gray-600" />
+                        <Label text="{{ bio }}" textWrap="true" class="text-gray-500" />
+                        <WrapLayout>
+                            <Label text="{{ interests }}" class="text-xs bg-gray-200 rounded-full px-2 py-1 mr-1 mb-1" />
+                        </WrapLayout>
+                    </StackLayout>
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+        
+        <StackLayout row="1" orientation="horizontal" class="p-4 bg-white">
+            <Button text="Pass" tap="{{ onPass }}" class="w-1/2 -outline" />
+            <Button text="Like" tap="{{ onLike }}" class="w-1/2 -primary" />
+        </StackLayout>
+        
+        <nav:BottomNavigation row="2" currentPage="matches" />
+    </GridLayout>
+</Page>

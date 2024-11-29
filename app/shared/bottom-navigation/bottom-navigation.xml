@@ -1,0 +1,21 @@
+<GridLayout xmlns="http://schemas.nativescript.org/tns.xsd" columns="*, *, *, *" class="bg-white border-t border-gray-200 p-2" loaded="onLoaded">
+    <StackLayout col="0" tap="{{ navigateToMatches }}" class="text-center p-2">
+        <Label text="&#xf004;" class="{{ currentPage === 'matches' ? 'tab-active' : 'tab-inactive' }} fas text-2xl" />
+        <Label text="Matches" class="{{ currentPage === 'matches' ? 'tab-active' : 'tab-inactive' }} text-xs" />
+    </StackLayout>
+    
+    <StackLayout col="1" tap="{{ navigateToChat }}" class="text-center p-2">
+        <Label text="&#xf086;" class="{{ currentPage === 'chat' ? 'tab-active' : 'tab-inactive' }} fas text-2xl" />
+        <Label text="Chat" class="{{ currentPage === 'chat' ? 'tab-active' : 'tab-inactive' }} text-xs" />
+    </StackLayout>
+    
+    <StackLayout col="2" tap="{{ navigateToProfile }}" class="text-center p-2">
+        <Label text="&#xf007;" class="{{ currentPage === 'profile' ? 'tab-active' : 'tab-inactive' }} fas text-2xl" />
+        <Label text="Profile" class="{{ currentPage === 'profile' ? 'tab-active' : 'tab-inactive' }} text-xs" />
+    </StackLayout>
+    
+    <StackLayout col="3" tap="{{ navigateToSettings }}" class="text-center p-2">
+        <Label text="&#xf013;" class="{{ currentPage === 'settings' ? 'tab-active' : 'tab-inactive' }} fas text-2xl" />
+        <Label text="Settings" class="{{ currentPage === 'settings' ? 'tab-active' : 'tab-inactive' }} text-xs" />
+    </StackLayout>
+</GridLayout>
